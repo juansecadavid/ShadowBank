@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a04da854cb02e2488fd080e4c7e4bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 5
   stoppingDistance: 0.9
   retreatDistance: 5
   canMove: 1
@@ -504,8 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15670071ba3693f418ae0820b15e94c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  moveDelay: 0.01
+  speed: 5
+  moveDelay: 0.00000001
   canMove: 1
 --- !u!1 &2122158959
 GameObject:

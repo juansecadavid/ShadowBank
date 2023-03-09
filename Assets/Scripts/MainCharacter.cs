@@ -25,7 +25,10 @@ public class MainCharacter : MonoBehaviour
             // Obtener entradas de teclado
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
-
+            if (Input.GetKey(KeyCode.LeftShift))
+                speed = 8f;
+            else
+                speed = 5f;
             // Restringir el movimiento en un solo eje
             /*if (Mathf.Abs(input.x) > 0f)
             {
@@ -54,25 +57,6 @@ public class MainCharacter : MonoBehaviour
         if (moveTimer > 0f)
         {
             moveTimer -= Time.deltaTime;
-        }
-
-        //Codigo para fantasma
-
-        // Obtener una referencia al objeto del fantasma
-        GameObject ghost = GameObject.FindGameObjectWithTag("Ghost");
-
-        // Comprobar si el jugador está mirando hacia el fantasma
-        if (ghost != null)
-        {
-            Vector2 dir = ghost.transform.position - transform.position;
-            if (Vector2.Dot(dir.normalized, transform.right) < 0f)
-            {
-                // El jugador no está mirando hacia el fantasma
-            }
-            else
-            {
-                // El jugador está mirando hacia el fantasma
-            }
         }
     }
 
