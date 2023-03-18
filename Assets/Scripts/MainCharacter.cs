@@ -30,14 +30,14 @@ public class MainCharacter : MonoBehaviour
             else
                 speed = speedInicial;
             // Restringir el movimiento en un solo eje
-            /*if (Mathf.Abs(input.x) > 0f)
+            if (Mathf.Abs(input.x) > 0f)
             {
                 input.y = 0f;
             }
             else if (Mathf.Abs(input.y) > 0f)
             {
                 input.x = 0f;
-            }*/
+            }
 
             // Si se presiona una dirección, mover al personaje
             if (input != Vector2.zero && moveTimer <= 0f)
