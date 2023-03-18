@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
-
+    public float speedInicial;
     public float speed = 5f; // Velocidad de movimiento del personaje
     public float moveDelay; // Tiempo de retraso entre movimientos
     public bool canMove = true; // Indica si el jugador puede moverse
@@ -26,9 +26,9 @@ public class MainCharacter : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
             if (Input.GetKey(KeyCode.LeftShift))
-                speed = 8f;
+                speed = speedInicial+20;
             else
-                speed = 5f;
+                speed = speedInicial;
             // Restringir el movimiento en un solo eje
             /*if (Mathf.Abs(input.x) > 0f)
             {
