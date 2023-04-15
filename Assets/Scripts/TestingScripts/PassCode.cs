@@ -7,30 +7,35 @@ using TMPro;
 
 public class PassCode : MonoBehaviour
 {
-    string Code = "123";
-    string Number = null;
-    int NumberIndex = 0;
+    string code = "123";
+    string number = null;
+    int numberIndex = 0;
     string alpha;
-    public TMP_Text UiText;
+    public TMP_Text uiText;
+    int[] numbIndArray = new int[6];
 
-    public void CodeFunction(string Numbers)
+    private void Start()
     {
-        NumberIndex++;
-        Number = Number + Numbers;
-        UiText.text = Number;
+        
+    }
 
+    public void CodeFunction(string numbers)
+    {
+        numberIndex++;
+        number = number + numbers;
+        uiText.text = number;
     }
     public void Enter()
     {
-        if (Number == Code)
+        if (number == code)
         {
             SceneManager.LoadScene(1);
         }
     }
     public void Delete()
     {
-        NumberIndex++;
-        Number = null;
-        UiText.text = Number;
+        numberIndex++;
+        number = null;
+        uiText.text = number;
     }
 }
