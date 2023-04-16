@@ -6,7 +6,7 @@ public class MainCharacter : MonoBehaviour
 {
     public float speedInicial;
     public float speed = 5f; // Velocidad de movimiento del personaje
-    public float moveDelay; // Tiempo de retraso entre movimientos
+    public float moveDelay;  // Tiempo de retraso entre movimientos
     public bool canMove = true; // Indica si el jugador puede moverse
 
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
@@ -65,7 +65,6 @@ public class MainCharacter : MonoBehaviour
         // Calcular la posición objetivo basada en la dirección
         Vector2 targetPos = rb2d.position + input;
         // Mover al personaje usando el Rigidbody2D y la velocidad
-        rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, targetPos, speed * Time.deltaTime));
-        
+        rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, targetPos, speed * Time.deltaTime));      
     }
 }
