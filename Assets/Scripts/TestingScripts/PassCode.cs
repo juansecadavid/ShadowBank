@@ -7,16 +7,18 @@ using TMPro;
 
 public class PassCode : MonoBehaviour
 {
-    string code = "123";
-    string number = null;
-    int numberIndex = 0;
-    string alpha;
+    private string code = "";
+    private string number = null;
+    private int numberIndex = 0;
+    private string alpha;
     public TMP_Text uiText;
-    int[] numbIndArray = new int[6];
+    private int[] numbIndArray = new int[6];
+    private InteractionZone codeLock;
 
     private void Start()
     {
-        
+        /*gameObject.SetActive(false);
+        code = codeLock.codeBlock;*/
     }
 
     public void CodeFunction(string numbers)
@@ -27,9 +29,13 @@ public class PassCode : MonoBehaviour
     }
     public void Enter()
     {
-        if (number == code)
+        if (IsCodeEquals() == true)
         {
-            SceneManager.LoadScene(1);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
         }
     }
     public void Delete()
@@ -37,5 +43,17 @@ public class PassCode : MonoBehaviour
         numberIndex++;
         number = null;
         uiText.text = number;
+    }
+
+    public bool IsCodeEquals()
+    {
+        if (number == code)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
