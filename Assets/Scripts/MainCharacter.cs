@@ -8,6 +8,7 @@ public class MainCharacter : MonoBehaviour
     public float speed = 5f; // Velocidad de movimiento del personaje
     public float moveDelay;  // Tiempo de retraso entre movimientos
     public bool canMove = true; // Indica si el jugador puede moverse
+    public int fearBar;
 
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
     private Vector2 input; // Almacenará las entradas del jugador
@@ -18,7 +19,7 @@ public class MainCharacter : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (canMove)
         {
@@ -26,7 +27,7 @@ public class MainCharacter : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
             if (Input.GetKey(KeyCode.LeftShift))
-                speed = speedInicial+20;
+                speed = speedInicial+10;
             else
                 speed = speedInicial;
             // Restringir el movimiento en un solo eje
@@ -44,7 +45,7 @@ public class MainCharacter : MonoBehaviour
             {
                 Move();
                 float angle = Mathf.Atan2(-input.x, input.y) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+                //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
                 moveTimer = moveDelay;
             }
         }
