@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class MainCharacter : MonoBehaviour
     public float moveDelay;  // Tiempo de retraso entre movimientos
     public bool canMove = true; // Indica si el jugador puede moverse
     public int fearBar;
+    public TextMeshProUGUI fearText;
+    public GameObject fearHeart;
+    float fearTime=0;
+    public float animationTime;
+    bool isVisible=true;
 
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
     private Vector2 input; // Almacenará las entradas del jugador
@@ -17,8 +23,12 @@ public class MainCharacter : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        fearText.text = $"{fearBar}";
     }
-
+    private void Update()
+    {
+        HearthBit();
+    }
     void FixedUpdate()
     {
         if (canMove)
@@ -67,5 +77,19 @@ public class MainCharacter : MonoBehaviour
         Vector2 targetPos = rb2d.position + input;
         // Mover al personaje usando el Rigidbody2D y la velocidad
         rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, targetPos, speed * Time.deltaTime));      
+    }
+    public void ChangeFear(int amount)
+    {
+        fearBar = fearBar + amount;
+    }
+    void HearthBit()
+    {
+        fearTime+=Time.deltaTime;
+        if(fearTime>animationTime)
+        {
+            isVisible = !isVisible; // Invertir la visibilidad
+            fearHeart.SetActive(isVisible); // Activar o desactivar el objeto según la visibilidad actual
+            fearTime = 0.0f; // Reiniciar el temporizador   
+        }
     }
 }
