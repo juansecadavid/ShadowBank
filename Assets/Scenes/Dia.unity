@@ -25548,20 +25548,32 @@ PrefabInstance:
       value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 510424826080675887, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 510424826080675887, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 510424826080675887, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -279
+      value: -142
       objectReference: {fileID: 0}
     - target: {fileID: 510424826080675887, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -109
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 510424826081159463, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
       propertyPath: m_fontSize
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 510424826081159463, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
       propertyPath: m_fontSizeBase
-      value: 100
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 510424826081159480, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 510424826753429858, guid: 9efae442a31d4914cb63c676c65e64f8, type: 3}
       propertyPath: m_Color.a
@@ -26050,7 +26062,7 @@ Tilemap:
   m_GameObject: {fileID: 1562443368}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -5, y: 3, z: 0}
+  - first: {x: -4, y: 5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -26060,7 +26072,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 3, z: 0}
+  - first: {x: 3, y: 5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -26070,7 +26082,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -5, y: 4, z: 0}
+  - first: {x: -4, y: 6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -26080,7 +26092,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 4, z: 0}
+  - first: {x: 3, y: 6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 4
