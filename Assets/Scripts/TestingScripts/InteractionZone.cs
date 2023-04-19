@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InteractionZone : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
     public GameObject uCode;
+    public string codeBlock = "";
 
     private void Start()
     {
-        uCode.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class InteractionZone : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             uCode.SetActive(true);
+            //uCode.GetComponent<string>();
         }
     }
 }
