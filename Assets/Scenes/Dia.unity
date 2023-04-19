@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114048009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 0000000079db36c7
+  m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -507,7 +507,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25723,6 +25723,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1687097834}
+    - target: {fileID: 138544898, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -952706183
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158314580, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158314580, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -952706183
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388992229, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388992229, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -952706183
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388992229, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1918086666998965957, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -25766,6 +25790,14 @@ PrefabInstance:
     - target: {fileID: 1918086666998965957, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918086666998965958, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918086666998965958, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -952706183
       objectReference: {fileID: 0}
     - target: {fileID: 1918086666998965961, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_Name
@@ -25824,7 +25856,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 16385
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
