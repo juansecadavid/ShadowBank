@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.U2D;
+using UnityEngine.Rendering.Universal;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class MainCharacter : MonoBehaviour
     public GameObject fearHeart;
     public GameObject catcher;
     public GameObject lintern;
+    public Light2D worldLight;
     float fearTime=0;
     public float animationTime;
     bool isVisible=true;
@@ -28,6 +30,7 @@ public class MainCharacter : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
+        worldLight.intensity = 1;
     }
     private void Update()
     {
