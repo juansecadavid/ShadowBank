@@ -12,6 +12,7 @@ public class MainCharacter : MonoBehaviour
     public int fearBar;
     public TextMeshProUGUI fearText;
     public GameObject fearHeart;
+    public GameObject catcher;
     float fearTime=0;
     public float animationTime;
     bool isVisible=true;
@@ -23,11 +24,15 @@ public class MainCharacter : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
     }
     private void Update()
     {
         HearthBit();
+        fearText.text = $"{fearBar}";
+        animationTime = 60f/fearBar-0.3f;
+
     }
     void FixedUpdate()
     {
@@ -37,7 +42,7 @@ public class MainCharacter : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
             if (Input.GetKey(KeyCode.LeftShift))
-                speed = speedInicial+10;
+                speed = speedInicial+2;
             else
                 speed = speedInicial;
             // Restringir el movimiento en un solo eje
@@ -55,7 +60,7 @@ public class MainCharacter : MonoBehaviour
             {
                 Move();
                 float angle = Mathf.Atan2(-input.x, input.y) * Mathf.Rad2Deg;
-                //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+                catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
                 moveTimer = moveDelay;
             }
         }
@@ -87,9 +92,9 @@ public class MainCharacter : MonoBehaviour
         fearTime+=Time.deltaTime;
         if(fearTime>animationTime)
         {
-            isVisible = !isVisible; // Invertir la visibilidad
-            fearHeart.SetActive(isVisible); // Activar o desactivar el objeto según la visibilidad actual
-            fearTime = 0.0f; // Reiniciar el temporizador   
+            isVisible = !isVisible;
+            fearHeart.SetActive(isVisible);
+            fearTime = 0.0f;
         }
     }
 }
