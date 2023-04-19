@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.U2D;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MainCharacter : MonoBehaviour
     public TextMeshProUGUI fearText;
     public GameObject fearHeart;
     public GameObject catcher;
+    public GameObject lintern;
     float fearTime=0;
     public float animationTime;
     bool isVisible=true;
@@ -32,7 +34,12 @@ public class MainCharacter : MonoBehaviour
         HearthBit();
         fearText.text = $"{fearBar}";
         animationTime = 60f/fearBar-0.3f;
-
+        if(Input.GetKey(KeyCode.F))
+        {
+            lintern.SetActive(true);
+        }
+        else
+            lintern.SetActive(false);
     }
     void FixedUpdate()
     {
