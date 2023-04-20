@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Dia.unity
+    guid: 258f122daf9d36c4c9c5dbc6b7d0bbbe
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 731d1b239825d4249a30703df9dd4eb0
+  - enabled: 1
+    path: Assets/Scenes/Noche.unity
+    guid: be1a2d25f0f7edb4e9040465f1f29919
   m_configObjects: {}

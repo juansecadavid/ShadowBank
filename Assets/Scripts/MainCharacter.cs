@@ -30,7 +30,7 @@ public class MainCharacter : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
-        worldLight.intensity = 1;
+        worldLight.intensity = 0f;
     }
     private void Update()
     {
