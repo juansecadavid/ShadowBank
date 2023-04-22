@@ -46,8 +46,4 @@ public class Statues : MonoBehaviour
             playerObj.ChangeFear(3);
         }
     }
-    void Die()
-    {
-
-    }
 }

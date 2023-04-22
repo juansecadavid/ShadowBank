@@ -24,13 +24,14 @@ public class MainCharacter : MonoBehaviour
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
     private Vector2 input; // Almacenará las entradas del jugador
     private float moveTimer = 0f; // Timer para el retraso entre movimientos
+    public float levelLight;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
-        worldLight.intensity = 1f;
+        worldLight.intensity = levelLight;
     }
     private void Update()
     {
