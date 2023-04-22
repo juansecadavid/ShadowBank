@@ -43,6 +43,7 @@ public class MainCharacter : MonoBehaviour
         }
         else
             lintern.SetActive(false);
+        Die();
     }
     void FixedUpdate()
     {
@@ -105,6 +106,13 @@ public class MainCharacter : MonoBehaviour
             isVisible = !isVisible;
             fearHeart.SetActive(isVisible);
             fearTime = 0.0f;
+        }
+    }
+    void Die()
+    {
+        if (fearBar>190)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
