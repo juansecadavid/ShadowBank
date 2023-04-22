@@ -44,6 +44,7 @@ public class MainCharacter : MonoBehaviour
         else
             lintern.SetActive(false);
         Die();
+        Color color = new Color();
     }
     void FixedUpdate()
     {
