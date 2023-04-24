@@ -8,17 +8,37 @@ using TMPro;
 public class PassCode : MonoBehaviour
 {
     private string code = "";
+    private bool activePanelCode = false;
     private string number = null;
     private int numberIndex = 0;
     private string alpha;
     public TMP_Text uiText;
     private int[] numbIndArray = new int[6];
-    private InteractionZone codeLock;
+    private InteractionZone interactZone;
 
     private void Start()
     {
+        //gameObject.SetActive(false);
+    }
+
+    private void Awake()
+    {
         gameObject.SetActive(false);
-        /*code = codeLock.codeBlock;*/
+        code = interactZone.codeBlock;
+    }
+
+    public void CodePanel()
+    {
+        if(activePanelCode == false)
+        {
+            gameObject.SetActive(true);
+            activePanelCode = true;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            activePanelCode = false;
+        }
     }
 
     public void CodeFunction(string numbers)

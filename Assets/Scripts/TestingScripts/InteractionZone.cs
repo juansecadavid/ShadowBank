@@ -1,28 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractionZone : MonoBehaviour
 {
     //public GameObject player;
     public GameObject uCode;
+    private PassCode passCode;
     public string codeBlock = "";
 
-    private void Start()
-    {
-    }
+    public bool isInRange;
+    public KeyCode interact;
+    public UnityEvent interactAction;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (isInRange)
+        {
+            if (Input.GetKeyDown(interact))
+            {
+                interactAction.Invoke();
+            }
+        }
     }
-
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            uCode.SetActive(true);
-            //uCode.GetComponent<string>();
+            isInRange = true;
+            Debug.Log("En contacto");
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isInRange = true;
+            Debug.Log("En contacto");
+        }
+    }
+    /*
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("MainCharacter1"))
+        {
+            isInRange = true;
+            Debug.Log("Fuera de Contacto");
+        }
+    }*/
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MainCharacter1"))
+        {
+            isInRange = false;
+            Debug.Log("Fuera de Contacto");
         }
     }
 }
