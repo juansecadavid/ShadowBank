@@ -74,5 +74,10 @@ public class ScriptMenu : MonoBehaviour
         Application.Quit();
         mordida.Play();
     }
+
+    public void InicioJuego()
+    {
+        SceneManager.LoadScene("Dia");
+    }
 }
 
