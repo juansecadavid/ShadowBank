@@ -27445,6 +27445,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1687097834}
     - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: levelLight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: worldLight
       value: 
       objectReference: {fileID: 627671653}
