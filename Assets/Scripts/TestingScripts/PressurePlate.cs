@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    private GameObject doorGObjct;
+    public GameObject doorGObjct;
     private Puertas door;
     private float timer;
 
@@ -34,7 +34,7 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<CharacterController>() != null)
+        if(collision.gameObject.CompareTag("Player"))
         {
             door.Abrir();
         }

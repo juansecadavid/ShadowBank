@@ -21,6 +21,7 @@ public class InteractionZone : MonoBehaviour
             if (Input.GetKeyDown(interact))
             {
                 interactAction.Invoke();
+                StartCoroutine("InteractionTime");
             }
         }
     }
@@ -54,10 +55,17 @@ public class InteractionZone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("MainCharacter1"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
             Debug.Log("Fuera de Contacto");
         }
+    }
+    
+    private IEnumerator InteractionTime()
+    {
+        yield return new WaitForSeconds(1);
+
+        isInRange = false;
     }
 }

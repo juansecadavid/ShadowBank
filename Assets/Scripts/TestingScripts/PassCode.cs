@@ -14,6 +14,7 @@ public class PassCode : MonoBehaviour
     private string alpha;
     public TMP_Text uiText;
     private int[] numbIndArray = new int[6];
+    //instancia de objeto
     private InteractionZone interactZone;
 
     private void Start()
