@@ -968,6 +968,7 @@ GameObject:
   - component: {fileID: 638837120}
   - component: {fileID: 638837122}
   - component: {fileID: 638837123}
+  - component: {fileID: 638837124}
   m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
@@ -1049,7 +1050,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638837119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e11e4ee6aed3b3c4ca8e732fb54bd8cc, type: 3}
   m_Name: 
@@ -1083,6 +1084,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.47924843}
   m_EdgeRadius: 0
+--- !u!50 &638837124
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638837119}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &720519657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,7 +4383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uCode: {fileID: 1777302421}
-  codeBlock: 
+  codeBlock: 1325
   isInRange: 0
   interact: 101
   interactAction:
@@ -4774,6 +4796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 838280830}
+  interactZ: {fileID: 1623419767}
+  doorGObjct: {fileID: 2043574305}
 --- !u!114 &1777302423
 MonoBehaviour:
   m_ObjectHideFlags: 0

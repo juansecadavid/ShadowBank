@@ -15,7 +15,10 @@ public class PassCode : MonoBehaviour
     public TMP_Text uiText;
     private int[] numbIndArray = new int[6];
     //instancia de objeto
+    public GameObject interactZ;
     private InteractionZone interactZone;
+    public GameObject doorGObjct;
+    private Puertas door;
 
     private void Start()
     {
@@ -24,8 +27,16 @@ public class PassCode : MonoBehaviour
 
     private void Awake()
     {
+        interactZone = interactZ.GetComponent<InteractionZone>();
         gameObject.SetActive(false);
         code = interactZone.codeBlock;
+        door = doorGObjct.GetComponent<Puertas>();
+    }
+
+    private void Update()
+    {
+        CodeFunction();
+        EnterCode();
     }
 
     public void CodePanel()
@@ -42,11 +53,79 @@ public class PassCode : MonoBehaviour
         }
     }
 
-    public void CodeFunction(string numbers)
+    public void CodeFunction(/*string numbers*/)
     {
-        numberIndex++;
-        number = number + numbers;
-        uiText.text = number;
+        
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                number = number + "0";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                number = number + "1";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                number = number + "2";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                number = number + "3";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                number = number + "4";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                number = number + "5";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                number = number + "6";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                number = number + "7";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                number = number + "8";
+                uiText.text = number;
+                numberIndex++;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                number = number + "9";
+                uiText.text = number;
+                numberIndex++;
+            }
+        
+    }
+
+    public void EnterCode()
+    {
+        if(uiText.text == code)
+        {
+            door.Abrir();
+            gameObject.SetActive(false);
+        }
     }
     public void Enter()
     {

@@ -21,7 +21,7 @@ public class InteractionZone : MonoBehaviour
             if (Input.GetKeyDown(interact))
             {
                 interactAction.Invoke();
-                StartCoroutine("InteractionTime");
+                //StartCoroutine("InteractionTime");
             }
         }
     }
@@ -61,11 +61,11 @@ public class InteractionZone : MonoBehaviour
             Debug.Log("Fuera de Contacto");
         }
     }
-    
+    /*
     private IEnumerator InteractionTime()
     {
         yield return new WaitForSeconds(1);
 
         isInRange = false;
-    }
+    }*/
 }
