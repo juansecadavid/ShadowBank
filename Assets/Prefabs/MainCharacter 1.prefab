@@ -188,7 +188,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -459,8 +459,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_enableVertexGradient: 1
+  m_colorMode: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 1918086666998965959}
   - component: {fileID: 1918086666998965960}
   - component: {fileID: 1918086666998965956}
+  - component: {fileID: 698932010}
   m_Layer: 3
   m_Name: MainCharacter 1
   m_TagString: Player
@@ -669,13 +670,34 @@ MonoBehaviour:
   speed: 5
   moveDelay: 0.01
   canMove: 1
-  fearBar: 85
+  fearBar: 95
   fearText: {fileID: 1620522770}
   fearHeart: {fileID: 1388992227}
   catcher: {fileID: 1918086667660200160}
   lintern: {fileID: 87755838}
   worldLight: {fileID: 0}
   animationTime: 0.5
+  levelLight: 0.3
+--- !u!95 &698932010
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918086666998965961}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72ea4e8f2ab909a43b281603104aba77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1918086667660200160
 GameObject:
   m_ObjectHideFlags: 0

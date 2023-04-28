@@ -25,10 +25,12 @@ public class MainCharacter : MonoBehaviour
     private Vector2 input; // Almacenará las entradas del jugador
     private float moveTimer = 0f; // Timer para el retraso entre movimientos
     public float levelLight;
+    Animator anim;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        anim=GetComponent<Animator>();
         animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
         worldLight.intensity = levelLight;
@@ -75,6 +77,9 @@ public class MainCharacter : MonoBehaviour
                 float angle = Mathf.Atan2(-input.x, input.y) * Mathf.Rad2Deg;
                 catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
                 moveTimer = moveDelay;
+            }else
+            {
+                anim.SetBool("IsWalking", false);
             }
         }
         else
@@ -94,7 +99,33 @@ public class MainCharacter : MonoBehaviour
         // Calcular la posición objetivo basada en la dirección
         Vector2 targetPos = rb2d.position + input;
         // Mover al personaje usando el Rigidbody2D y la velocidad
-        rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, targetPos, speed * Time.deltaTime));      
+        rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, targetPos, speed * Time.deltaTime));
+
+        if (input.x > 0f)
+        {
+            anim.SetFloat("X", 1);
+            anim.SetFloat("Y", 0);
+            anim.SetBool("IsWalking", true);
+        }
+        else if (input.x < 0f)
+        {
+            anim.SetFloat("X", -1);
+            anim.SetFloat("Y", 0);
+            anim.SetBool("IsWalking", true);
+        }
+        else if (input.y > 0f)
+        {
+            anim.SetFloat("Y", 1);
+            anim.SetFloat("X", 0);
+            anim.SetBool("IsWalking", true);
+        }
+        else if (input.y < 0f)
+        {
+            anim.SetFloat("Y", -1);
+            anim.SetFloat("X", 0);
+            anim.SetBool("IsWalking", true);
+        }
+
     }
     public void ChangeFear(int amount)
     {
