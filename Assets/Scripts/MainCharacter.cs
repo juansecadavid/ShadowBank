@@ -20,6 +20,8 @@ public class MainCharacter : MonoBehaviour
     float fearTime=0;
     public float animationTime;
     bool isVisible=true;
+    float lightTime = 0f;
+    bool canUseLintern;
 
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
     private Vector2 input; // Almacenará las entradas del jugador
@@ -40,7 +42,21 @@ public class MainCharacter : MonoBehaviour
         HearthBit();
         fearText.text = $"{fearBar}";
         animationTime = 60f/fearBar-0.3f;
-        if(Input.GetKey(KeyCode.F))
+        lightTime+=Time.deltaTime;
+        if(lightTime>10f)
+        {
+            int generator = Random.Range(0, 2);
+            if(generator == 0)
+            {
+                canUseLintern = false;
+            }
+            else
+            {
+                canUseLintern= true;
+            }
+            lightTime = 0f;
+        }
+        if(Input.GetKey(KeyCode.F)&&canUseLintern)
         {
             lintern.SetActive(true);
         }
