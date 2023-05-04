@@ -24,7 +24,7 @@ public class MainCharacter : MonoBehaviour
     bool canUseLintern;
 
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
-    private Vector2 input; // Almacenará las entradas del jugador
+    private Vector2 input; // Almacenarï¿½ las entradas del jugador
     private float moveTimer = 0f; // Timer para el retraso entre movimientos
     public float levelLight;
     Animator anim;
@@ -86,7 +86,7 @@ public class MainCharacter : MonoBehaviour
                 input.x = 0f;
             }
 
-            // Si se presiona una dirección, mover al personaje
+            // Si se presiona una direcciï¿½n, mover al personaje
             if (input != Vector2.zero && moveTimer <= 0f)
             {
                 Move();
@@ -112,7 +112,7 @@ public class MainCharacter : MonoBehaviour
 
     void Move()
     {
-        // Calcular la posición objetivo basada en la dirección
+        // Calcular la posiciï¿½n objetivo basada en la direcciï¿½n
         Vector2 targetPos = rb2d.position + input;
         // Mover al personaje usando el Rigidbody2D y la velocidad
         rb2d.MovePosition(Vector2.MoveTowards(rb2d.position, targetPos, speed * Time.deltaTime));

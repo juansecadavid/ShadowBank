@@ -7,6 +7,10 @@ TagManager:
   - Catcher
   - Ghost
   - Piso
+  - Dinero
+  - Dinero100
+  - Dinero50
+  - Dinero500
   layers:
   - Default
   - TransparentFX
