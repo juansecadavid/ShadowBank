@@ -111,7 +111,8 @@ public class Statues : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerObj.ChangeFear(3);
+            int amount = Random.Range(50, 300);
+            playerObj.GetMoney(-amount);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

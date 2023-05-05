@@ -22,6 +22,8 @@ public class MainCharacter : MonoBehaviour
     bool isVisible=true;
     float lightTime = 0f;
     bool canUseLintern;
+    public TextMeshProUGUI moneyText;
+    private float contadorDinero = 0;
 
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
     private Vector2 input; // Almacenar� las entradas del jugador
@@ -43,6 +45,7 @@ public class MainCharacter : MonoBehaviour
         fearText.text = $"{fearBar}";
         animationTime = 60f/fearBar-0.3f;
         lightTime+=Time.deltaTime;
+        moneyText.text = $"{contadorDinero}";
         if(lightTime>10f)
         {
             int generator = Random.Range(0, 2);
@@ -162,6 +165,14 @@ public class MainCharacter : MonoBehaviour
         if (fearBar>190)
         {
             gameObject.SetActive(false);
+        }
+    }
+    public void GetMoney(float amount)
+    {
+        contadorDinero += amount;
+        if(contadorDinero<0)
+        {
+            contadorDinero = 0;
         }
     }
 }
