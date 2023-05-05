@@ -5,7 +5,7 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public GameObject doorGObjct;
-    private Puertas door;
+    private DoorPressurePlate door;
     private float timer;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class PressurePlate : MonoBehaviour
 
     private void Awake()
     {
-        door = doorGObjct.GetComponent<Puertas>();
+        door = doorGObjct.GetComponent<DoorPressurePlate>();
     }
 
     // Update is called once per frame
@@ -36,7 +36,15 @@ public class PressurePlate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Estatua"))
         {
-            door.Abrir();
+            door.IncreaseCount();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Estatua"))
+        {
+            door.DecreaseCount();
         }
     }
 }
