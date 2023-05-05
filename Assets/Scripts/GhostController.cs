@@ -13,6 +13,7 @@ public class GhostController : MonoBehaviour
     private Transform playerPos;
     private MainCharacter playerObj;
     private Rigidbody2D rb2d;
+    float retreatTime=0f;
     public bool canMove;
 
     void Start()
@@ -57,15 +58,26 @@ public class GhostController : MonoBehaviour
         }
         else
         {
-            if(Vector2.Distance(transform.position,startingPosition)<0.2f)
+            retreatTime += Time.deltaTime;
+            if(retreatTime > 5f)
             {
-                rb2d.velocity = Vector2.zero;
+                if (Vector2.Distance(transform.position, startingPosition) < 0.2f)
+                {
+                    rb2d.velocity = Vector2.zero;
+                    retreatTime = 0f;
+                }
+                else
+                {
+                    Vector2 direction = (startingPosition - transform.position).normalized;
+                    rb2d.velocity = direction * moveSpeed;
+                }
+                
             }
             else
             {
-                Vector2 direction = (startingPosition - transform.position).normalized;
-                rb2d.velocity = direction * moveSpeed;
+                rb2d.velocity = Vector2.zero;
             }
+            
             
         }     
     }

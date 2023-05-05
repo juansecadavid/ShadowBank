@@ -49,9 +49,9 @@ public class ScriptMenu : MonoBehaviour
         mordida.Play();
     }
 
-    public void mPrincipal(string name)
+    public void mPrincipal()
     {
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene("Inicio");
         Time.timeScale = 1;
         mordida.Play();
     }
@@ -73,6 +73,11 @@ public class ScriptMenu : MonoBehaviour
         Debug.Log("Se ha salido del juego");
         Application.Quit();
         mordida.Play();
+    }
+
+    public void InicioJuego()
+    {
+        SceneManager.LoadScene("Dia");
     }
 }
 
