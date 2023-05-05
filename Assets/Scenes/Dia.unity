@@ -159,9 +159,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1933969007}
   dialogueText: {fileID: 1417496731}
   dialogueLines:
-  - 'Estoy trabajando en el banco!
-
-    No Molestes!'
+  - estoy trabajando malparido hpta
 --- !u!61 &82232966
 BoxCollider2D:
   m_ObjectHideFlags: 0
