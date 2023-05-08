@@ -8,12 +8,17 @@ public class InvokerEvent : MonoBehaviour
     public UnityEvent invoker;
     private bool isInRange = false;
 
+    //public int order = 0;
+
     // Update is called once per frame
     void Update()
     {
         if (isInRange)
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
+            {
                 invoker.Invoke();
+                GetComponent<InvokerEvent>().enabled = false;
+            }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
