@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostController : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    public float stoppingDistance = 3f;
+    public float stoppingDistance = 0.002f;
     public float retreatDistance = 5f;
     public Vector3 startingPosition;
 
@@ -53,7 +53,6 @@ public class GhostController : MonoBehaviour
                 if (distanceToPlayer > stoppingDistance)
                 {
                     rb2d.velocity = direction * moveSpeed;
-
                 }
                 // Si el jugador está dentro del rango de parada, detiene el movimiento del fantasma
                 else
@@ -87,9 +86,7 @@ public class GhostController : MonoBehaviour
             else
             {
                 rb2d.velocity = Vector2.zero;
-            }
-            
-            
+            }       
         }     
     }
     private void OnTriggerEnter2D(Collider2D collision)

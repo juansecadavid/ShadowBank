@@ -21,6 +21,7 @@ public class Statues : MonoBehaviour
     Vector3 startPos;
     public bool isAttacking=true;
     public float contador=0f;
+    public GameObject textoMoney;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +84,7 @@ public class Statues : MonoBehaviour
                             rigidbody2D.velocity=Vector2.zero;
                         }*/
                         rigidbody2D.position = startPos;
+                        textoMoney.SetActive(false);
                         contador = 0f;
                         canMove = false;
                         isAttacking = true;

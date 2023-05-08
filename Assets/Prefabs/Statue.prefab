@@ -163,6 +163,7 @@ MonoBehaviour:
   startingPosition: {fileID: 1082694137}
   isAttacking: 1
   contador: 0
+  textoMoney: {fileID: 0}
 --- !u!50 &1603634829718935564
 Rigidbody2D:
   serializedVersion: 4

@@ -50372,6 +50372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15cbdb879622a6649b266201d16545a8, type: 3}
+--- !u!1 &1071733463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1476872040, guid: 6265824beb76a64498570394210abeaa, type: 3}
+  m_PrefabInstance: {fileID: 1507676477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1227619085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 186498161156107893, guid: 15cbdb879622a6649b266201d16545a8, type: 3}
@@ -50695,6 +50700,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4d1dfc846de0e9d42b2e4e62268cfaa8, type: 2}
+    - target: {fileID: 1476872043, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476872043, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476872043, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476872043, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -120
+      objectReference: {fileID: 0}
     - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: worldLight
       value: 
@@ -65304,6 +65325,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.093
       objectReference: {fileID: 0}
+    - target: {fileID: 1603634829718935567, guid: 91bfaead929676543b50c96fe5bfc639, type: 3}
+      propertyPath: textoMoney
+      value: 
+      objectReference: {fileID: 1071733463}
     - target: {fileID: 1603634829718936048, guid: 91bfaead929676543b50c96fe5bfc639, type: 3}
       propertyPath: m_Name
       value: EstatuaLeft
