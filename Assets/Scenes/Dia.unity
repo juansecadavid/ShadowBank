@@ -50310,7 +50310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 25ac21871ab2e4c50a6a4077429e0856, type: 3}
+  m_Sprite: {fileID: 1830022526, guid: 0556e572670de264d93b751d5a994616, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -50329,8 +50329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462865707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 1.23, z: 0}
-  m_LocalScale: {x: 0.12391205, y: 0.12391205, z: 0.12391205}
+  m_LocalPosition: {x: -0.024, y: 1.207, z: 0}
+  m_LocalScale: {x: 0.46999982, y: 0.46999982, z: 0.46999982}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 82232969}
@@ -51998,6 +51998,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1687097834}
+    - target: {fileID: 698932010, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4d1dfc846de0e9d42b2e4e62268cfaa8, type: 2}
     - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: levelLight
       value: 1
