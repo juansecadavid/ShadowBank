@@ -180,7 +180,7 @@ public class MainCharacter : MonoBehaviour
         contadorDinero += amount;
         if(amount<0)
         {
-            textoPerdida.text = $"Has perdido {-amount}";
+            textoPerdida.text = $"- {-amount}";
             textoPerdida.gameObject.SetActive(true);
         }
         if(contadorDinero<0)
