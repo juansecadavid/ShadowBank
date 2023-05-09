@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Comojugar.unity
+    guid: d8336a29c9a46457fb9b37135f9dc9b7
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 65b9af3a7eb8d4cb7ba41104244061d4
   m_configObjects: {}
