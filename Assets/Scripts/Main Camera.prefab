@@ -12,7 +12,11 @@ GameObject:
   - component: {fileID: 8835064740508851838}
   - component: {fileID: 8835064740508851713}
   - component: {fileID: 4183910975159998732}
+
   - component: {fileID: -4589170080270944053}
+
+  - component: {fileID: 2442915446729478516}
+
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -101,7 +105,11 @@ MonoBehaviour:
   target: {fileID: 0}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
+
 --- !u!114 &-4589170080270944053
+
+--- !u!114 &2442915446729478516
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Statues : MonoBehaviour
 {
-    Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
     private MainCharacter playerObj;
     public Transform objetivo;
     public bool canMove=false;
@@ -17,12 +17,18 @@ public class Statues : MonoBehaviour
     float moveDelay;
     BoxCollider2D boxCol;
     public GameObject child;
+    public GameObject startingPosition;
+    Vector3 startPos;
+    public bool isAttacking=true;
+    public float contador=0f;
+    public GameObject textoMoney;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerObj = GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharacter>();
         moveTimer = 0f;
+        startPos=startingPosition.GetComponent<Rigidbody2D>().position;
         speed= playerObj.speed;
         speedInicial = playerObj.speedInicial;
         moveDelay = playerObj.moveDelay;
@@ -49,14 +55,41 @@ public class Statues : MonoBehaviour
             float distanceToPlayer = Vector2.Distance(transform.position, objetivo.position);
             if (canMove)
             {
-                if (distanceToPlayer > 0.2f)
+                if (distanceToPlayer > 0.2f&&isAttacking)
                 {
                     Vector2 direction = (objetivo.position - transform.position).normalized;
                     rigidbody2D.velocity = direction * moveSpeed;
                 }
                 else
                 {
-                    rigidbody2D.velocity = Vector2.zero;
+                    if(isAttacking)
+                    {
+                        rigidbody2D.velocity = Vector2.zero;
+                    }
+                    
+                    contador=contador+Time.deltaTime;
+                    isAttacking = false;
+                    if(contador>5f)
+                    {/* 
+                        //float distanceToBase = Vector2.Distance(transform.position, startingPosition);
+                        if(Vector2.Distance(transform.position,startPos)>0.2f)
+                        {
+                            Vector2 direction = (startPos - transform.position).normalized;
+                            rigidbody2D.position = startPos;
+                        }
+                        else
+                        {
+                            contador = 0f;
+                            canMove=false;
+                            rigidbody2D.velocity=Vector2.zero;
+                        }*/
+                        rigidbody2D.position = startPos;
+                        textoMoney.SetActive(false);
+                        contador = 0f;
+                        canMove = false;
+                        isAttacking = true;
+                    }
+                        
                 }
 
             }

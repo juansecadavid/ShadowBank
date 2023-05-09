@@ -30,14 +30,19 @@ public class MainCharacter : MonoBehaviour
     private float moveTimer = 0f; // Timer para el retraso entre movimientos
     public float levelLight;
     Animator anim;
+    public AudioClip latido;
+    AudioSource audioSource;
+    public TextMeshProUGUI textoPerdida;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim=GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
         worldLight.intensity = levelLight;
+        textoPerdida.gameObject.SetActive(false);
     }
     private void Update()
     {
@@ -155,7 +160,10 @@ public class MainCharacter : MonoBehaviour
         fearTime+=Time.deltaTime;
         if(fearTime>animationTime)
         {
+            audioSource.clip = latido;
             isVisible = !isVisible;
+            if(isVisible)
+                audioSource.Play();
             fearHeart.SetActive(isVisible);
             fearTime = 0.0f;
         }
@@ -170,6 +178,11 @@ public class MainCharacter : MonoBehaviour
     public void GetMoney(float amount)
     {
         contadorDinero += amount;
+        if(amount<0)
+        {
+            textoPerdida.text = $"- {-amount}";
+            textoPerdida.gameObject.SetActive(true);
+        }
         if(contadorDinero<0)
         {
             contadorDinero = 0;

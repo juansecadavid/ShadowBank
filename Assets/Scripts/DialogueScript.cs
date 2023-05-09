@@ -17,19 +17,17 @@ public class DialogueScript : MonoBehaviour
     private int lineIndex;
     void Update()
     {
-        if(isPlayerInRange && Input.GetKey(KeyCode.Return))
+        if(isPlayerInRange && Input.GetKeyDown(KeyCode.Return))
         {
             if(!didDialogueStart)
             {
                 StartDialogue();
             }
         }
-        /*if(isPlayerInRange && Input.GetKey(KeyCode.Return))
+        /*else if(dialogueText.text == dialogueLines[1])
         {
-           if(didDialogueStart)
-           {
-               StopDialogue();
-           }
+            
+            NextDialogueLine();
         }*/
     }
 
@@ -39,18 +37,32 @@ public class DialogueScript : MonoBehaviour
         dialoguePanel.SetActive(true);
         dialogueMark.SetActive(false);
         lineIndex = 0;
-        Time.timeScale = 0f;
         StartCoroutine(ShowLine());
     }
 
-    /*private void StopDialogue()
+    /*private void NextDialogueLine()
+    {
+       lineIndex++;
+       if(lineIndex < dialogueLines.Length)
+       {
+         StartCoroutine(ShowLine());
+       }
+       else
+       {
+         didDialogueStart = false;
+         dialoguePanel.SetActive(false);
+         dialogueMark.SetActive(true);
+       }
+    }*/
+
+
+    private void StopDialogue()
     {
         didDialogueStart = false;
         dialoguePanel.SetActive(false);
         dialogueMark.SetActive(false);
         lineIndex = 0;
-        Time.timeScale = 1f;
-    } */
+    }
 
    
 
@@ -80,6 +92,8 @@ public class DialogueScript : MonoBehaviour
         {
             isPlayerInRange = false;
             dialogueMark.SetActive(false);
+            didDialogueStart = false;
+            dialoguePanel.SetActive(false); 
         }
     }
     

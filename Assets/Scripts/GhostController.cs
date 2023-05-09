@@ -5,11 +5,13 @@ using UnityEngine;
 public class GhostController : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    public float stoppingDistance = 3f;
+    public float stoppingDistance = 0.002f;
     public float retreatDistance = 5f;
     public Vector3 startingPosition;
 
-
+    Animator animator;
+    public RuntimeAnimatorController controller1;
+    public RuntimeAnimatorController controller2;
     private Transform playerPos;
     private MainCharacter playerObj;
     private Rigidbody2D rb2d;
@@ -22,6 +24,13 @@ public class GhostController : MonoBehaviour
         playerObj = GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharacter>();
         rb2d = GetComponent<Rigidbody2D>();
         startingPosition= rb2d.position;
+        animator = GetComponent<Animator>();
+        int rand = Random.Range(0, 2);
+        if(rand == 0)
+            animator.runtimeAnimatorController = controller1;
+        else
+            animator.runtimeAnimatorController = controller2;
+
     }
 
     void FixedUpdate()
@@ -38,6 +47,7 @@ public class GhostController : MonoBehaviour
                 Vector2 direction = (playerPos.position - transform.position).normalized;
 
                 // Comprueba si el jugador está mirando hacia el fantasma
+                Animation(direction);
 
                 // Si el jugador está fuera del rango de parada, mueve el fantasma hacia el jugador
                 if (distanceToPlayer > stoppingDistance)
@@ -76,9 +86,7 @@ public class GhostController : MonoBehaviour
             else
             {
                 rb2d.velocity = Vector2.zero;
-            }
-            
-            
+            }       
         }     
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -98,6 +106,38 @@ public class GhostController : MonoBehaviour
         if (collision.CompareTag("Catcher"))
         {
             canMove = true;
+        }
+    }
+    void Animation(Vector2 distance)
+    {
+        float posx=Mathf.Abs(distance.x);
+        float posy=Mathf.Abs(distance.y);
+
+        if(posx<posy)
+        {
+            if(distance.y < 0)
+            {
+                animator.SetFloat("moveY", -1);
+                animator.SetFloat("moveX", -1);
+            }
+            else
+            {
+                animator.SetFloat("moveY", 1);
+                animator.SetFloat("moveX", 1);
+            }
+            
+        }else
+        {
+            if(distance.x<0)
+            {
+                animator.SetFloat("moveX", -1);
+                animator.SetFloat("moveY", 1);
+            }
+            else
+            {
+                animator.SetFloat("moveX", 1);
+                animator.SetFloat("moveY", -1);
+            }
         }
     }
 }
