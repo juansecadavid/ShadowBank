@@ -53517,6 +53517,10 @@ PrefabInstance:
       propertyPath: worldLight
       value: 
       objectReference: {fileID: 627671653}
+    - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: portaPapeles
+      value: 
+      objectReference: {fileID: 1417337326}
     - target: {fileID: 1918086666998965957, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_RootOrder
       value: 3

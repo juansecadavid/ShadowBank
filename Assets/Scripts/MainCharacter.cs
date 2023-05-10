@@ -16,6 +16,7 @@ public class MainCharacter : MonoBehaviour
     public GameObject fearHeart;
     public GameObject catcher;
     public GameObject lintern;
+    public GameObject portaPapeles;
     public Light2D worldLight;
     float fearTime=0;
     public float animationTime;
@@ -51,6 +52,16 @@ public class MainCharacter : MonoBehaviour
         animationTime = 60f/fearBar-0.3f;
         lightTime+=Time.deltaTime;
         moneyText.text = $"{contadorDinero}";
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            portaPapeles.SetActive(true);
+            canMove = false;
+        }
+        else
+        {
+            portaPapeles.SetActive(false);
+        }
+
         if(lightTime>10f)
         {
             int generator = Random.Range(0, 2);
