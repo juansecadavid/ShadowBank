@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7bb4e4dc584ee242b61afb1bd348c96
+guid: 4b37bdf2a2b86e145b4437186ee8d729
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPCs1_0
+      name: NPC 2 ARREGLADO1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10086ea8110ba4d4ea8f47220165a997
-      internalID: 1357566538
+      spriteID: ea7a4d9224d355c4db6fe494b042a337
+      internalID: -1110467474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCs1_1
+      name: NPC 2 ARREGLADO1_1
       rect:
         serializedVersion: 2
         x: 160
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2ec1fdb481563f4ab5be52c733dd2e9
-      internalID: -607920198
+      spriteID: abe2134e3867eea4aa71bfe8c1c1d557
+      internalID: -382074441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCs1_2
+      name: NPC 2 ARREGLADO1_2
       rect:
         serializedVersion: 2
         x: 0
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 057ee1758f5b3bc4b9a920a4b4af8fae
-      internalID: 1745069564
+      spriteID: a91f64714492f19449f602af92f59b0b
+      internalID: 626902955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCs1_3
+      name: NPC 2 ARREGLADO1_3
       rect:
         serializedVersion: 2
         x: 160
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b894f3c4bfab0b24c922f53dfa067031
-      internalID: -483618377
+      spriteID: 4ae14d40ed633d749a068592444b6d00
+      internalID: 638926187
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NPCs1_2: 1745069564
-      NPCs1_0: 1357566538
-      NPCs1_3: -483618377
-      NPCs1_1: -607920198
+      NPC 2 ARREGLADO1_0: -1110467474
+      NPC 2 ARREGLADO1_2: 626902955
+      NPC 2 ARREGLADO1_3: 638926187
+      NPC 2 ARREGLADO1_1: -382074441
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
