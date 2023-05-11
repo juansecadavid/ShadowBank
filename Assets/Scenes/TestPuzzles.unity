@@ -184,6 +184,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  objectToRender: {fileID: 115192362}
+  startSprite: {fileID: 21300000, guid: 1064c773903b7804d93749b5814feb10, type: 3}
+  newSprite: {fileID: 21300000, guid: f5c3fad04affbf24288d1eb6e31c0177, type: 3}
 --- !u!61 &115192361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -323,6 +326,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  objectToRender: {fileID: 504918674}
+  startSprite: {fileID: 21300000, guid: 0eded922980726143a081816e21a5122, type: 3}
+  newSprite: {fileID: 21300000, guid: 02a2432a206bc9442823d51a8ff28ba9, type: 3}
 --- !u!61 &504918673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -486,7 +492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638837119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.02, y: -1.12, z: 0}
+  m_LocalPosition: {x: -6.76, y: 1.01, z: 0}
   m_LocalScale: {x: 1, y: 2.277, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -705,9 +711,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0012442206, y: 0.026939292}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.48040056
 --- !u!114 &1090518936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,8 +768,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c40bc1c66b686f942a3aa2b6f8005847, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -781,8 +787,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090518934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 2.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.53, y: 2.52, z: 0}
+  m_LocalScale: {x: 0.59229994, y: 0.6079999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -849,6 +855,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  objectToRender: {fileID: 1243460900}
+  startSprite: {fileID: 21300000, guid: 0eded922980726143a081816e21a5122, type: 3}
+  newSprite: {fileID: 21300000, guid: 02a2432a206bc9442823d51a8ff28ba9, type: 3}
 --- !u!61 &1243460899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1361,6 +1370,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  objectToRender: {fileID: 1683457403}
+  startSprite: {fileID: 21300000, guid: e20de4162c70da64590ece6c9a20ae9d, type: 3}
+  newSprite: {fileID: 21300000, guid: a171f91610036c647a23ff8e91bcb12b, type: 3}
 --- !u!61 &1683457402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1466,6 +1478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed021691b77ab44dae8cc000da3ad10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1828540127 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6569758431093912516, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+  m_PrefabInstance: {fileID: 6569758430826924716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1866338435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1814,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+      propertyPath: newSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5c3fad04affbf24288d1eb6e31c0177, type: 3}
+    - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+      propertyPath: startSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1064c773903b7804d93749b5814feb10, type: 3}
+    - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+      propertyPath: objectToRender
+      value: 
+      objectReference: {fileID: 1828540127}
     - target: {fileID: 6569758431978190932, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
       propertyPath: m_RootOrder
       value: 8
