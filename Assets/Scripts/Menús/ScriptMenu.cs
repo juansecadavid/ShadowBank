@@ -77,6 +77,14 @@ public class ScriptMenu : MonoBehaviour
 
     public void InicioJuego()
     {
+        SceneManager.LoadScene("Comojugar");
+    }
+    public void ContinuarCJ()
+    {
+        SceneManager.LoadScene("Intro");
+    }
+    public void ContinuarIntro()
+    {
         SceneManager.LoadScene("Dia");
     }
 }
