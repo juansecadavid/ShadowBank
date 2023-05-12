@@ -72,8 +72,8 @@ public class MainCharacter : MonoBehaviour
         
         if(lightTime>10f)
         {
-            int generator = Random.Range(0, 2);
-            if(generator == 0)
+            float generator = Random.Range(0f, 1f);
+            if(generator < 0.3f)
             {
                 canUseLintern = false;
             }
