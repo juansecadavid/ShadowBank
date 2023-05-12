@@ -15,7 +15,7 @@ public class Patrol : MonoBehaviour
     //public float stateDuration = 3f;
     private float stateTimer = 0f;
     public bool patrolInX;
-    public bool canMove;
+    public bool canMove=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,6 @@ public class Patrol : MonoBehaviour
         else
             currentState = NPCState.VerticalMovement;
         pared.SetActive(false);
-        canMove = true;
     }
 
     // Update is called once per frame
@@ -42,13 +41,9 @@ public class Patrol : MonoBehaviour
             stateTimer -= Time.deltaTime;
             if (stateTimer <= 0f&&patrolInX)
             {
-                float rand = Random.Range(0f, 1f);
+                int rand = Random.Range(0, 2);
                 // Cambiar de estado automáticamente
-                if(canMove==false)
-                {
-                    SetState(NPCState.Idle, 10f);
-                }
-                else if (rand < 0.7f)
+                if (rand == 0)
                 {
                     SetState(NPCState.HorizontalMovement, 4f);
                 }
@@ -75,6 +70,8 @@ public class Patrol : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(canMove)
+        {
             // Si se presiona una dirección y no está en tiempo de espera, mover al NPC
             if (input != Vector2.zero && moveTimer <= 0f)
             {
@@ -101,7 +98,7 @@ public class Patrol : MonoBehaviour
 
                 moveTimer = moveDelay;
             }
-         
+        }   
     }
 
     private void SetState(NPCState newState, float stateDuration)
