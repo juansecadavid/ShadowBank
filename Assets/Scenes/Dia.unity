@@ -128,6 +128,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3525875357555669406, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
   m_PrefabInstance: {fileID: 613662435}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &44618271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44618273}
+  - component: {fileID: 44618272}
+  - component: {fileID: 44618274}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &44618272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44618271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3d7ba0d88e0314a8f0fb4d4b857e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcMission: 0
+--- !u!4 &44618273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44618271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -4.76, z: -0.7649105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &44618274
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44618271}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.23, y: 0.89}
+  m_EdgeRadius: 0
 --- !u!1001 &105751367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50425,6 +50497,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -317025565, guid: 74d8e8b6d3d334643b0cd537da5998f8, type: 3}
     - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
+      propertyPath: isImportant
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: dialogueLines.Array.data[0]
       value: '- Daniel -
 
@@ -50516,6 +50592,10 @@ PrefabInstance:
     - target: {fileID: 3525875356399104380, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -330.34198
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
+      propertyPath: isImportant
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: dialogueLines.Array.data[0]
@@ -50731,6 +50811,10 @@ PrefabInstance:
     - target: {fileID: 3525875356399104380, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -330.34198
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
+      propertyPath: isImportant
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: dialogueLines.Array.data[0]
@@ -51019,6 +51103,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -317025565, guid: 74d8e8b6d3d334643b0cd537da5998f8, type: 3}
+    - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
+      propertyPath: isImportant
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: dialogueLines.Array.data[0]
       value: '- Alvaro -
@@ -51449,6 +51537,10 @@ PrefabInstance:
     - target: {fileID: 3525875356399104380, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -330.34198
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
+      propertyPath: isImportant
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3525875357384504878, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: dialogueLines.Array.data[0]

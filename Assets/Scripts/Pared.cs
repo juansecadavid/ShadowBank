@@ -31,6 +31,7 @@ public class Pared : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             pared.SetActive(true);
+            padre.canMove = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

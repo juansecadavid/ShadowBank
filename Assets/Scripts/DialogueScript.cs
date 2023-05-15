@@ -15,10 +15,23 @@ public class DialogueScript : MonoBehaviour
     private bool isPlayerInRange;
     private bool didDialogueStart;
     private int lineIndex;
+    private GameManagerController gameManagerController;
+    public bool isImportant;
+    bool firstCall;
+    private void Start()
+    {
+        gameManagerController=FindObjectOfType<GameManagerController>();
+        firstCall=true;
+    }
     void Update()
     {
         if(isPlayerInRange && Input.GetKeyDown(KeyCode.Return))
         {
+            if(firstCall==true&&isImportant)
+            {
+                gameManagerController.NPCMission();
+                firstCall = false;
+            }
             if(!didDialogueStart)
             {
                 StartDialogue();

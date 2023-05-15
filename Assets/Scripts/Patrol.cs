@@ -15,7 +15,7 @@ public class Patrol : MonoBehaviour
     //public float stateDuration = 3f;
     private float stateTimer = 0f;
     public bool patrolInX;
-    public bool canMove=true;
+    public bool canMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,7 @@ public class Patrol : MonoBehaviour
         else
             currentState = NPCState.VerticalMovement;
         pared.SetActive(false);
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -43,7 +44,11 @@ public class Patrol : MonoBehaviour
             {
                 int rand = Random.Range(0, 2);
                 // Cambiar de estado automáticamente
-                if (rand == 0)
+                if (canMove == false)
+                {
+                    SetState(NPCState.Idle, 10f);
+                }
+                else if (rand < 0.7f)
                 {
                     SetState(NPCState.HorizontalMovement, 4f);
                 }
@@ -70,35 +75,32 @@ public class Patrol : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(canMove)
+        // Si se presiona una dirección y no está en tiempo de espera, mover al NPC
+        if (input != Vector2.zero && moveTimer <= 0f)
         {
-            // Si se presiona una dirección y no está en tiempo de espera, mover al NPC
-            if (input != Vector2.zero && moveTimer <= 0f)
+            Vector2 targetPos = rigidbody2D.position + input;
+            rigidbody2D.MovePosition(Vector2.MoveTowards(rigidbody2D.position, targetPos, speed * Time.deltaTime));
+            float angle = Mathf.Atan2(-input.x, input.y) * Mathf.Rad2Deg + 90;
+            if (patrolInX)
             {
-                Vector2 targetPos = rigidbody2D.position + input;
-                rigidbody2D.MovePosition(Vector2.MoveTowards(rigidbody2D.position, targetPos, speed * Time.deltaTime));
-                float angle = Mathf.Atan2(-input.x, input.y) * Mathf.Rad2Deg + 90;
-                if (patrolInX)
+                if (angle == 180)
                 {
-                    if (angle == 180)
-                    {
-                        catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                    }
-                    else
-                        catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                    catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 }
-
                 else
-                {
-                    if (angle == 180)
-                        catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-                    else
-                        catcher.transform.rotation = Quaternion.Euler(new Vector3(180, 0, 0));
-                }
-
-                moveTimer = moveDelay;
+                    catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
-        }   
+
+            else
+            {
+                if (angle == 180)
+                    catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                else
+                    catcher.transform.rotation = Quaternion.Euler(new Vector3(180, 0, 0));
+            }
+
+            moveTimer = moveDelay;
+        }
     }
 
     private void SetState(NPCState newState, float stateDuration)
