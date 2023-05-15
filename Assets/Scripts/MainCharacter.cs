@@ -27,7 +27,7 @@ public class MainCharacter : MonoBehaviour
     public bool isNight;
     public TextMeshProUGUI moneyText;
     private float contadorDinero = 0;
-
+    public bool canRun;
     private Rigidbody2D rb2d; // Componente Rigidbody2D del personaje
     private Vector2 input; // Almacenar� las entradas del jugador
     private float moveTimer = 0f; // Timer para el retraso entre movimientos
@@ -99,7 +99,7 @@ public class MainCharacter : MonoBehaviour
             // Obtener entradas de teclado
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift)&&canRun)
                 speed = speedInicial+2;
             else
                 speed = speedInicial;
