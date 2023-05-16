@@ -9,6 +9,18 @@ public class GameManagerController : MonoBehaviour
     public int npcMission;
     int dayMissions;
     BoxCollider2D boxCollider;
+
+    //misiones subrayadas
+    [SerializeField] private GameObject mision1Completada;
+    [SerializeField] private GameObject mision2Completada;
+    [SerializeField] private GameObject mision3Completada;
+
+    //misiones completadas icon
+    [SerializeField] private GameObject mision1Icon;
+    [SerializeField] private GameObject mision2Icon;
+    [SerializeField] private GameObject mision3Icon;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +39,8 @@ public class GameManagerController : MonoBehaviour
         npcMission++;
         if(npcMission == 5)
         {
-            //llamado a subrayar el texto
+            mision1Completada.SetActive(true);
+            mision1Icon.SetActive(true);
             CompletingDayMissions();
         }
     }
