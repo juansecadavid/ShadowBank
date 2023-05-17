@@ -67,4 +67,9 @@ public class InvokerEvent : MonoBehaviour
     {
         objectToRender.sprite = sprite;
     }
+
+    public void ReverseChangeSprite()
+    {
+        objectToRender.sprite = startSprite;
+    }
 }

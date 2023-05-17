@@ -6,6 +6,10 @@ public class PressurePlate : MonoBehaviour
 {
     public GameObject doorGObjct;
     private DoorPressurePlate door;
+
+    [SerializeField]
+    private int assignedOrder;
+
     private float timer;
 
     // Start is called before the first frame update
@@ -36,7 +40,7 @@ public class PressurePlate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Estatua"))
         {
-            door.IncreaseCount();
+            door.ActivatePressurePlate(assignedOrder);
         }
     }
 
@@ -44,7 +48,10 @@ public class PressurePlate : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Estatua"))
         {
-            door.DecreaseCount();
+            if(door.manyPressures > 0)
+            {
+                door.DecreaseCount();
+            }
         }
     }
 }

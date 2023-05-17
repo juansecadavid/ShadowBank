@@ -10,6 +10,8 @@ public class DoorPressurePlate : MonoBehaviour
     public GameObject pressures;
     private PressurePlate plate;
 
+    public int isInOrder = 0;
+    public bool canOpen = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,24 +27,48 @@ public class DoorPressurePlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(manyPressures == neccesarlyComponents)
-        {
-            Abrir();
-        }
+        Abrir();
+        EndPressures();
     }
 
     public void Abrir()
     {
-        isOpen = true;
+        if (manyPressures == neccesarlyComponents && canOpen == true)
+            isOpen = true;
     }
 
+    public void ActivatePressurePlate(int orderInSequence)
+    {
+        if (orderInSequence > isInOrder)
+        {
+            isInOrder = orderInSequence;
+            manyPressures++;
+        }
+        else
+        {
+            canOpen = false;
+            manyPressures++;
+        }
+    }
+
+    public void EndPressures()
+    {
+        if(manyPressures == neccesarlyComponents)
+        {
+            isInOrder = 0;
+            canOpen = true;
+            manyPressures = 0;
+        }
+    }
+    /*
     public void IncreaseCount()
     {
         manyPressures++;
-    }
+    }*/
 
     public void DecreaseCount()
     {
         manyPressures--;
+        isInOrder = 0;
     }
 }

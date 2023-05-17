@@ -76,6 +76,11 @@ public class LeverSequence : MonoBehaviour
             for (int i = 0; i < leversForThis.Length; i++)
             {
                 leversForThis[i].canUse=true;
+
+                if(door.isOpen != true)
+                {
+                    leversForThis[i].ReverseChangeSprite();
+                }
             }
         }
     }
