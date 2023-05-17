@@ -51116,7 +51116,7 @@ GameObject:
   - component: {fileID: 970815342}
   m_Layer: 0
   m_Name: Billete y Caja1_2
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51134,6 +51134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 1000
+  openBox: {fileID: 1578292006, guid: 3622bfa8c7b96a84581ce0efa9ed56f1, type: 3}
 --- !u!50 &970815343
 Rigidbody2D:
   serializedVersion: 4
@@ -51149,7 +51150,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -51165,7 +51166,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -51895,6 +51896,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204646919}
   m_CullTransparentMesh: 1
+--- !u!1 &1216898282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216898283}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1216898283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216898282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -55.365097, y: 24.662518, z: 1.0680915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1227619085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 186498161156107893, guid: 15cbdb879622a6649b266201d16545a8, type: 3}
@@ -52843,6 +52875,10 @@ PrefabInstance:
     - target: {fileID: 971923350, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -212
+      objectReference: {fileID: 0}
+    - target: {fileID: 971923352, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_margin.z
+      value: -250.08884
       objectReference: {fileID: 0}
     - target: {fileID: 1388992229, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_SortingOrder

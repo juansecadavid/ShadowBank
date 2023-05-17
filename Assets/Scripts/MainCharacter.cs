@@ -231,39 +231,45 @@ public class MainCharacter : MonoBehaviour
 
     public void ChangeEnergy(BarraEnergía barra)
     {
-       
-       if(barra.barraEnergia<0)
+       if(isNight)
        {
-
-       }
-       else
-       {
-          contadorEnergia+=Time.deltaTime;
-          if(contadorEnergia>1.5f)
+          if(barra.barraEnergia<0)
+            {
+    
+            }
+          else
           {
-              barraEnergia.SetActive(false);
+             contadorEnergia+=Time.deltaTime;
+             if(contadorEnergia>1f)
+             {
+                 barraEnergia.SetActive(false);
+             }
           }
        }
+       
     }
     
     public void LightsOFF()
-    {
-       contadorLuz+=Time.deltaTime;
-       if(contadorLuz>10f&&contadorLuz<12f)
-       {
-          worldLight.intensity=0f;
-          if(isPlaying==false)
-          {
-                soundManager.SeleccionAudios(0,0.5f);
-                isPlaying =true;
-          }
-
-        }
-        else if(contadorLuz>30f)
+    {  
+        if(isNight)
         {
-              contadorLuz=0f;
-              worldLight.intensity=0.2f;
-              isPlaying=false;
+           contadorLuz+=Time.deltaTime;
+           if(contadorLuz>60f&&contadorLuz<62f)
+           {
+              worldLight.intensity=0f;
+              if(isPlaying==false)
+              {
+                    soundManager.SeleccionAudios(0,0.5f);
+                    isPlaying =true;
+              }
+    
+            }
+            else if(contadorLuz>74f)
+            {
+                  contadorLuz=0f;
+                  worldLight.intensity=0.2f;
+                  isPlaying=false;
+            }
         }
     }
 }

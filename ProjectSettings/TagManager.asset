@@ -11,6 +11,8 @@ TagManager:
   - Dinero100
   - Dinero50
   - Dinero500
+  - Estatua
+  - Box
   layers:
   - Default
   - TransparentFX
