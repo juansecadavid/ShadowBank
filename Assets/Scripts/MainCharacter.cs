@@ -42,6 +42,7 @@ public class MainCharacter : MonoBehaviour
     public AudioClip lightsOff;
     AudioSource audioSource;
     public TextMeshProUGUI textoPerdida;
+    SoundManager soundManager;
 
     void Start()
     {
@@ -55,6 +56,7 @@ public class MainCharacter : MonoBehaviour
         barraEnergia.SetActive(false);
         barrita=FindObjectOfType<BarraEnergía>();
         canUseLintern=true;
+        soundManager=FindAnyObjectByType<SoundManager>();
     }
     private void Update()
     {
@@ -199,8 +201,8 @@ public class MainCharacter : MonoBehaviour
         {
             audioSource.clip = latido;
             isVisible = !isVisible;
-            if(isVisible)
-                audioSource.Play();
+            if (isVisible)
+                //soundManager.SeleccionAudios(1, 0.1f);
             fearHeart.SetActive(isVisible);
             fearTime = 0.0f;
         }
@@ -246,16 +248,15 @@ public class MainCharacter : MonoBehaviour
     public void LightsOFF()
     {
        contadorLuz+=Time.deltaTime;
-       if(contadorLuz>10f)
+       if(contadorLuz>10f&&contadorLuz<12f)
        {
           worldLight.intensity=0f;
-          audioSource.clip=lightsOff;
-          audioSource.Play();
+          soundManager.SeleccionAudios(0, 0.05f);
        }
        else if(contadorLuz>20f)
        {
           contadorLuz=0f;
-          worldLight.intensity=levelLight;
+          worldLight.intensity=0.2f;
        }
     }
 }
