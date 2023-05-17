@@ -16,6 +16,8 @@ public class MainCharacter : MonoBehaviour
     public GameObject fearHeart;
     public GameObject catcher;
     public GameObject lintern;
+
+    public GameObject barraEnergia;
     public GameObject portaPapeles;
     public GameObject iconPorta;
     public Light2D worldLight;
@@ -32,8 +34,12 @@ public class MainCharacter : MonoBehaviour
     private Vector2 input; // Almacenar� las entradas del jugador
     private float moveTimer = 0f; // Timer para el retraso entre movimientos
     public float levelLight;
+    public float contadorEnergia;
+    public float contadorLuz;
+    private BarraEnergía barrita;
     Animator anim;
     public AudioClip latido;
+    public AudioClip lightsOff;
     AudioSource audioSource;
     public TextMeshProUGUI textoPerdida;
 
@@ -46,6 +52,9 @@ public class MainCharacter : MonoBehaviour
         fearText.text = $"{fearBar}";
         worldLight.intensity = levelLight;
         textoPerdida.gameObject.SetActive(false);
+        barraEnergia.SetActive(false);
+        barrita=FindObjectOfType<BarraEnergía>();
+        canUseLintern=true;
     }
     private void Update()
     {
@@ -90,7 +99,9 @@ public class MainCharacter : MonoBehaviour
         else
             lintern.SetActive(false);
         Die();
-        Color color = new Color();
+        
+        LightsOFF();
+
     }
     void FixedUpdate()
     {
@@ -100,9 +111,16 @@ public class MainCharacter : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
             if (Input.GetKey(KeyCode.LeftShift)&&canRun)
-                speed = speedInicial+2;
+                {
+                    speed = speedInicial+2;
+                    barraEnergia.SetActive(true);
+                    contadorEnergia=0f;
+                }
             else
+            {
                 speed = speedInicial;
+                ChangeEnergy(barrita);
+            }
             // Restringir el movimiento en un solo eje
             if (Mathf.Abs(input.x) > 0f)
             {
@@ -206,5 +224,38 @@ public class MainCharacter : MonoBehaviour
         {
             contadorDinero = 0;
         }
+    }
+
+    public void ChangeEnergy(BarraEnergía barra)
+    {
+       
+       if(barra.barraEnergia<0)
+       {
+
+       }
+       else
+       {
+          contadorEnergia+=Time.deltaTime;
+          if(contadorEnergia>1.5f)
+          {
+              barraEnergia.SetActive(false);
+          }
+       }
+    }
+
+    public void LightsOFF()
+    {
+       contadorLuz+=Time.deltaTime;
+       if(contadorLuz>10f)
+       {
+          worldLight.intensity=0f;
+          audioSource.clip=lightsOff;
+          audioSource.Play();
+       }
+       else if(contadorLuz>20f)
+       {
+          contadorLuz=0f;
+          worldLight.intensity=levelLight;
+       }
     }
 }

@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 333003039}
   - component: {fileID: 333003040}
   m_Layer: 3
-  m_Name: Light 2D
+  m_Name: Lintern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
+  m_OverlapOperation: 1
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
@@ -50485,7 +50485,7 @@ GameObject:
   - component: {fileID: 627671654}
   - component: {fileID: 627671653}
   m_Layer: 0
-  m_Name: Light 2D (1)
+  m_Name: AmbientLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50731,7 +50731,7 @@ GameObject:
   - component: {fileID: 834244944}
   - component: {fileID: 834244943}
   m_Layer: 0
-  m_Name: Light 2D (2)
+  m_Name: UILight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52027,8 +52027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 897, y: -69}
-  m_SizeDelta: {x: 397.76, y: 72.45001}
+  m_AnchoredPosition: {x: 884.7, y: -650}
+  m_SizeDelta: {x: 148.06, y: 26.97}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1284151590
 MonoBehaviour:
@@ -52670,6 +52670,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 87755838, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_Name
+      value: Linternn
+      objectReference: {fileID: 0}
+    - target: {fileID: 87755839, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_BlendStyleIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 87755839, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_OverlapOperation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 138544898, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_Camera
       value: 
@@ -52680,7 +52692,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 72ea4e8f2ab909a43b281603104aba77, type: 2}
     - target: {fileID: 971923350, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -249.99997
+      value: -212
       objectReference: {fileID: 0}
     - target: {fileID: 1388992229, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_SortingOrder
@@ -52724,7 +52736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1476872043, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -446
+      value: -408
       objectReference: {fileID: 0}
     - target: {fileID: 1476872043, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -52763,6 +52775,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: lightsOff
+      value: 
+      objectReference: {fileID: 8300000, guid: 813d6847526068a4d8f5653b35b34437, type: 3}
+    - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: levelLight
       value: 0.2
       objectReference: {fileID: 0}
@@ -52770,6 +52786,10 @@ PrefabInstance:
       propertyPath: worldLight
       value: 
       objectReference: {fileID: 627671653}
+    - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: barraEnergia
+      value: 
+      objectReference: {fileID: 1284151588}
     - target: {fileID: 1918086666998965957, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_RootOrder
       value: 10

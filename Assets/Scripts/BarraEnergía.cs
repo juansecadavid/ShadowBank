@@ -16,7 +16,7 @@ public class BarraEnergía : MonoBehaviour
         character = GetComponent<MainCharacter>();
         slider.maxValue = maxTime;
         slider.value = maxTime;
-        coolDown = 5f;
+        coolDown = 3f;
         barraEnergia = maxTime;
     }
 
