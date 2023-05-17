@@ -175,15 +175,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2052148834}
         m_TargetAssemblyTypeName: LeverSequence, Assembly-CSharp
         m_MethodName: ActivateLever
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isInRange: 0
+  canUse: 0
+  asignedNumber: 2
   objectToRender: {fileID: 115192362}
   startSprite: {fileID: 21300000, guid: 1064c773903b7804d93749b5814feb10, type: 3}
   newSprite: {fileID: 21300000, guid: f5c3fad04affbf24288d1eb6e31c0177, type: 3}
@@ -317,15 +320,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2052148834}
         m_TargetAssemblyTypeName: LeverSequence, Assembly-CSharp
         m_MethodName: ActivateLever
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isInRange: 0
+  canUse: 0
+  asignedNumber: 4
   objectToRender: {fileID: 504918674}
   startSprite: {fileID: 21300000, guid: 0eded922980726143a081816e21a5122, type: 3}
   newSprite: {fileID: 21300000, guid: 02a2432a206bc9442823d51a8ff28ba9, type: 3}
@@ -736,15 +742,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2052148834}
         m_TargetAssemblyTypeName: LeverSequence, Assembly-CSharp
         m_MethodName: ActivateLever
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isInRange: 0
+  canUse: 0
+  asignedNumber: 5
   objectToRender: {fileID: 1243460900}
   startSprite: {fileID: 21300000, guid: 0eded922980726143a081816e21a5122, type: 3}
   newSprite: {fileID: 21300000, guid: 02a2432a206bc9442823d51a8ff28ba9, type: 3}
@@ -1251,15 +1260,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2052148834}
         m_TargetAssemblyTypeName: LeverSequence, Assembly-CSharp
         m_MethodName: ActivateLever
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isInRange: 0
+  canUse: 0
+  asignedNumber: 3
   objectToRender: {fileID: 1683457403}
   startSprite: {fileID: 21300000, guid: e20de4162c70da64590ece6c9a20ae9d, type: 3}
   newSprite: {fileID: 21300000, guid: a171f91610036c647a23ff8e91bcb12b, type: 3}
@@ -1448,6 +1460,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: isNight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1918086666998965956, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: lintern
       value: 
@@ -1774,9 +1790,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1064c773903b7804d93749b5814feb10, type: 3}
     - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+      propertyPath: asignedNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
       propertyPath: objectToRender
       value: 
       objectReference: {fileID: 1828540127}
+    - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+      propertyPath: invoker.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569758431093912517, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
+      propertyPath: invoker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6569758431978190932, guid: bb744e8c7ae45f04b80b562e74662a9d, type: 3}
       propertyPath: m_RootOrder
       value: 8
