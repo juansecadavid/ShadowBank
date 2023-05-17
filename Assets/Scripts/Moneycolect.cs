@@ -12,6 +12,8 @@ public class Moneycolect : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             MainCharacter player=other.GetComponent<MainCharacter>();
+            //SoundManager sound=FindAnyObjectByType<SoundManager>();
+            //sound.SeleccionAudios(0, 0.05f);
             player.GetMoney(money);
             Destroy(gameObject);
         }

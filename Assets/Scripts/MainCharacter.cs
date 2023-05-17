@@ -43,12 +43,12 @@ public class MainCharacter : MonoBehaviour
     AudioSource audioSource;
     public TextMeshProUGUI textoPerdida;
     SoundManager soundManager;
+    bool isPlaying;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim=GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
         animationTime = fearBar / 60f;
         fearText.text = $"{fearBar}";
         worldLight.intensity = levelLight;
@@ -57,6 +57,7 @@ public class MainCharacter : MonoBehaviour
         barrita=FindObjectOfType<BarraEnergía>();
         canUseLintern=true;
         soundManager=FindAnyObjectByType<SoundManager>();
+        isPlaying = false;
     }
     private void Update()
     {
@@ -199,7 +200,7 @@ public class MainCharacter : MonoBehaviour
         fearTime+=Time.deltaTime;
         if(fearTime>animationTime)
         {
-            audioSource.clip = latido;
+            //audioSource.clip = latido;
             isVisible = !isVisible;
             if (isVisible)
                 //soundManager.SeleccionAudios(1, 0.1f);
@@ -244,19 +245,25 @@ public class MainCharacter : MonoBehaviour
           }
        }
     }
-
+    
     public void LightsOFF()
     {
        contadorLuz+=Time.deltaTime;
        if(contadorLuz>10f&&contadorLuz<12f)
        {
           worldLight.intensity=0f;
-          soundManager.SeleccionAudios(0, 0.05f);
-       }
-       else if(contadorLuz>20f)
-       {
-          contadorLuz=0f;
-          worldLight.intensity=0.2f;
-       }
+          if(isPlaying==false)
+          {
+                soundManager.SeleccionAudios(0,0.5f);
+                isPlaying =true;
+          }
+
+        }
+        else if(contadorLuz>30f)
+        {
+              contadorLuz=0f;
+              worldLight.intensity=0.2f;
+              isPlaying=false;
+        }
     }
 }
