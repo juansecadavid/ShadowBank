@@ -16,6 +16,7 @@ public class MainCharacter : MonoBehaviour
     public GameObject fearHeart;
     public GameObject catcher;
     public GameObject lintern;
+    public GameObject canvaDie;
 
     public GameObject barraEnergia;
     public GameObject portaPapeles;
@@ -213,6 +214,7 @@ public class MainCharacter : MonoBehaviour
         if (fearBar>190)
         {
             gameObject.SetActive(false);
+            canvaDie.SetActive(true);
         }
     }
     public void GetMoney(float amount)
