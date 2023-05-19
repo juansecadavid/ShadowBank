@@ -14,4 +14,9 @@ public class Botoneeees : MonoBehaviour
     {
         SceneManager.LoadScene("Inicio");
     }
+
+    public void ContinuarNoche()
+    {
+        SceneManager.LoadScene("Noche");
+    }
 }

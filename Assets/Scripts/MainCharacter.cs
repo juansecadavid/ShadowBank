@@ -21,6 +21,8 @@ public class MainCharacter : MonoBehaviour
     public GameObject barraEnergia;
     public GameObject portaPapeles;
     public GameObject iconPorta;
+    public GameObject libroNotas;
+    public GameObject iconLibro;
     public Light2D worldLight;
     float fearTime=0;
     public float animationTime;
@@ -54,11 +56,14 @@ public class MainCharacter : MonoBehaviour
         fearText.text = $"{fearBar}";
         worldLight.intensity = levelLight;
         textoPerdida.gameObject.SetActive(false);
-        barraEnergia.SetActive(false);
         barrita=FindObjectOfType<BarraEnergía>();
         canUseLintern=true;
         soundManager=FindAnyObjectByType<SoundManager>();
         isPlaying = false;
+        if(isNight)
+        {
+            barraEnergia.SetActive(false);
+        }
     }
     private void Update()
     {
@@ -79,6 +84,21 @@ public class MainCharacter : MonoBehaviour
             {
                 portaPapeles.SetActive(false);
                 iconPorta.SetActive(true);
+                canMove = true;
+            }
+        }
+        else
+        {
+            if(Input.GetKey(KeyCode.Tab))
+            {
+                libroNotas.SetActive(true);
+                iconLibro.SetActive(false);
+                canMove = false;
+            }
+            else
+            {
+                libroNotas.SetActive(false);
+                iconLibro.SetActive(true);
                 canMove = true;
             }
         }

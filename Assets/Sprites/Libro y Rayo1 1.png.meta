@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 249e0f76740514b4fac76bc1b3cf7d6f
+guid: 8a9e1d99470164f8489000a9c6719715
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,12 +141,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Libro y Rayo1_0
+      name: Libro y Rayo1 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 160
-        width: 160
+        width: 320
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -155,40 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39f47362e709243fb9fe5d26cffab465
-      internalID: -987093526
+      spriteID: f011c3f7af1b14c9eba984ebda4bb9b0
+      internalID: 1383266994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Libro y Rayo1_1
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 160
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c79be591f124d4e378bffe2f986fd742
-      internalID: 764247289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Libro y Rayo1_2
+      name: Libro y Rayo1 1_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
+        width: 320
         height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,29 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65884e40b3d9a4c2893dd97278aee65b
-      internalID: 1262387682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Libro y Rayo1_3
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f75212a376d134ca1bb0b8b2775685af
-      internalID: 1029895494
+      spriteID: b84fccead73214809be9303046080c3a
+      internalID: -1960249933
       vertices: []
       indices: 
       edges: []
@@ -235,10 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Libro y Rayo1_0: -987093526
-      Libro y Rayo1_1: 764247289
-      Libro y Rayo1_2: 1262387682
-      Libro y Rayo1_3: 1029895494
+      Libro y Rayo1 1_1: -1960249933
+      Libro y Rayo1 1_0: 1383266994
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
