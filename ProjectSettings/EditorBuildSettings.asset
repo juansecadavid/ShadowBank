@@ -5,18 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Dia.unity
-    guid: 258f122daf9d36c4c9c5dbc6b7d0bbbe
   - enabled: 1
     path: Assets/Scenes/Inicio.unity
     guid: 731d1b239825d4249a30703df9dd4eb0
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Comojugar.unity
     guid: d8336a29c9a46457fb9b37135f9dc9b7
@@ -24,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 65b9af3a7eb8d4cb7ba41104244061d4
   - enabled: 1
-    path: Assets/Scenes/Noche.unity
-    guid: eb8023d91202148de8a2a37427533260
+    path: Assets/Scenes/Dia.unity
+    guid: 258f122daf9d36c4c9c5dbc6b7d0bbbe
   - enabled: 1
     path: Assets/Scenes/IntroNoche.unity
     guid: 3d4c2509442d14aa08d2bf1579db8293
+  - enabled: 1
+    path: Assets/Scenes/Noche.unity
+    guid: eb8023d91202148de8a2a37427533260
   m_configObjects: {}
