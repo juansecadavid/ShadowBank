@@ -224,6 +224,9 @@ public class MainCharacter : MonoBehaviour
             //audioSource.clip = latido;
             isVisible = !isVisible;
             if (isVisible)
+            {
+
+            }
                 //soundManager.SeleccionAudios(1, 0.1f);
             fearHeart.SetActive(isVisible);
             fearTime = 0.0f;

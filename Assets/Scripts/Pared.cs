@@ -19,7 +19,7 @@ public class Pared : MonoBehaviour
         if(pared.activeInHierarchy)
         {
             contador += Time.deltaTime;
-            if(contador > 20f)
+            if(contador > 10f)
             {
                 pared.SetActive(false);
                 contador = 0f;

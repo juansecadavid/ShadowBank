@@ -69400,6 +69400,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 584431703}
     m_Modifications:
+    - target: {fileID: 1227619086, guid: 15cbdb879622a6649b266201d16545a8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 186498161156107883, guid: 15cbdb879622a6649b266201d16545a8, type: 3}
       propertyPath: m_Name
       value: Fantasma (4)
@@ -70298,13 +70302,14 @@ GameObject:
   - component: {fileID: 2495665639011038841}
   - component: {fileID: 2495665639011038846}
   - component: {fileID: 2495665639011038847}
+  - component: {fileID: 2495665639011038848}
   m_Layer: 7
   m_Name: NPC (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2495665639011038846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70350,6 +70355,26 @@ MonoBehaviour:
   currentState: 1
   patrolInX: 1
   canMove: 0
+--- !u!95 &2495665639011038848
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495665639011038844}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c2e0c78ffab5864887505fd0085405a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2495665639207529292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70663,7 +70688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3525875357555669401, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3525875357555669406, guid: c059fd1359a54d744b93b90eb3eb31c8, type: 3}
       propertyPath: m_RootOrder
