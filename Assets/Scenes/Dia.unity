@@ -27697,6 +27697,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 87755838, guid: 6265824beb76a64498570394210abeaa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 138544894, guid: 6265824beb76a64498570394210abeaa, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -31483,6 +31487,7 @@ GameObject:
   - component: {fileID: 1741466486}
   - component: {fileID: 1741466485}
   - component: {fileID: 1741466484}
+  - component: {fileID: 1741466489}
   m_Layer: 7
   m_Name: NPC (5)
   m_TagString: Untagged
@@ -31506,8 +31511,8 @@ MonoBehaviour:
   catcher: {fileID: 1208827851}
   moveDelay: 0
   pared: {fileID: 1792762732}
-  currentState: 1
-  patrolInX: 1
+  currentState: 0
+  patrolInX: 0
   canMove: 0
 --- !u!61 &1741466485
 BoxCollider2D:
@@ -31628,6 +31633,26 @@ Transform:
   m_Father: {fileID: 539819150}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1741466489
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741466483}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c2e0c78ffab5864887505fd0085405a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1751655439
 GameObject:
   m_ObjectHideFlags: 0

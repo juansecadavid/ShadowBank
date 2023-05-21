@@ -10,6 +10,7 @@ public class NPCmovement : MonoBehaviour
     private float moveTimer = 0f;
     //public GameObject catcher;
     public float moveDelay;
+    Animator animator;
 
     public NPCState currentState = NPCState.VerticalMovement;
     //public float stateDuration = 3f;
@@ -19,6 +20,7 @@ public class NPCmovement : MonoBehaviour
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         SetState(currentState, 4f);
     }
 
@@ -64,6 +66,35 @@ public class NPCmovement : MonoBehaviour
             //catcher.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             moveTimer = moveDelay;
         }
+        if (input.y < 0f)
+        {
+            animator.SetFloat("moveY", -1f);
+        }
+        else if (input.y > 0f)
+        {
+            animator.SetFloat("moveY", 1f);
+        }
+        else
+        {
+            animator.SetFloat("moveY", 0f);
+        }
+
+        if (input.x < 0f)
+        {
+            animator.SetFloat("moveX", -1f);
+        }
+        else if (input.x > 0f)
+        {
+            animator.SetFloat("moveX", 1f);
+        }
+        else
+        {
+            animator.SetFloat("moveX", 0f);
+        }
+        if (input != Vector2.zero)
+        {
+            animator.SetBool("isMoving", true);
+        }
     }
 
     private void SetState(NPCState newState, float stateDuration)
@@ -91,6 +122,7 @@ public class NPCmovement : MonoBehaviour
         else if (newState == NPCState.Idle)
         {
             input = Vector2.zero;
+            animator.SetBool("isMoving", false);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -27,7 +27,7 @@ public class MainCharacter : MonoBehaviour
     float fearTime=0;
     public float animationTime;
     bool isVisible=true;
-    float lightTime = 0f;
+    public float lightTime = 0f;
     bool canUseLintern;
     public bool isNight;
     public TextMeshProUGUI moneyText;
@@ -63,6 +63,7 @@ public class MainCharacter : MonoBehaviour
         if(isNight)
         {
             barraEnergia.SetActive(false);
+            lintern.SetActive(false);
         }
     }
     private void Update()
@@ -70,7 +71,7 @@ public class MainCharacter : MonoBehaviour
         HearthBit();
         fearText.text = $"{fearBar}";
         animationTime = 60f/fearBar-0.3f;
-        lightTime+=Time.deltaTime;
+        
         moneyText.text = $"{contadorDinero}";
         if(isNight==false)
         {
@@ -103,25 +104,43 @@ public class MainCharacter : MonoBehaviour
             }
         }
         
-        if(lightTime>10f)
+        
+        if(Input.GetKeyDown(KeyCode.F)&&canUseLintern)
+        {
+            if(lintern.activeInHierarchy)
+            {
+                lintern.SetActive(false);
+            }
+            else
+            {
+                lintern.SetActive(true);
+            }
+            
+        }
+        else if(!canUseLintern)
+            lintern.SetActive(false);
+
+        if(lintern.activeInHierarchy)
+        {
+            lightTime += Time.deltaTime;
+        }
+        else if(!lintern.activeInHierarchy&&!canUseLintern)
+        {
+            lightTime += Time.deltaTime;
+        }
+        if (lightTime > 10f)
         {
             float generator = Random.Range(0f, 1f);
-            if(generator < 0.3f)
+            if (generator < 0.3f)
             {
                 canUseLintern = false;
             }
             else
             {
-                canUseLintern= true;
+                canUseLintern = true;
             }
             lightTime = 0f;
         }
-        if(Input.GetKey(KeyCode.F)&&canUseLintern)
-        {
-            lintern.SetActive(true);
-        }
-        else
-            lintern.SetActive(false);
         Die();
         
         LightsOFF();
