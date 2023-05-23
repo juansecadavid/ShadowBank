@@ -40,7 +40,7 @@ public class DoorPressurePlate : MonoBehaviour
         {
             isOpen = true;
             renderer.sprite=null;
-
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
             
     }
