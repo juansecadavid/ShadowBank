@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NightGameManager : MonoBehaviour
 {
+
+    public GameObject zonaTrampa;
+    public GameObject paredTrampa;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,14 @@ public class NightGameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+           paredTrampa.SetActive(true);
+           Destroy(zonaTrampa);
+        }
     }
 }

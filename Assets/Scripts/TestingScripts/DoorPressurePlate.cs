@@ -10,6 +10,8 @@ public class DoorPressurePlate : MonoBehaviour
     public GameObject pressures;
     private PressurePlate plate;
 
+    SpriteRenderer renderer;
+
     public int isInOrder = 0;
     public bool canOpen = true;
 
@@ -17,6 +19,7 @@ public class DoorPressurePlate : MonoBehaviour
     void Start()
     {
         isOpen = false;
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Awake()
@@ -34,7 +37,12 @@ public class DoorPressurePlate : MonoBehaviour
     public void Abrir()
     {
         if (manyPressures == neccesarlyComponents && canOpen == true)
+        {
             isOpen = true;
+            renderer.sprite=null;
+
+        }
+            
     }
 
     public void ActivatePressurePlate(int orderInSequence)
