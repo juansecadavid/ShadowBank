@@ -14,7 +14,14 @@ public class Puertas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isOpen)
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
     public void Abrir()
     {
