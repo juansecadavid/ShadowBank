@@ -30,6 +30,7 @@ public class GameManagerController : MonoBehaviour
     [SerializeField] private GameObject mision1Icon;
     [SerializeField] private GameObject mision2Icon;
     [SerializeField] private GameObject mision3Icon;
+    [SerializeField] private GameObject iconPortapapeles;
 
 
     // Start is called before the first frame update
@@ -65,6 +66,7 @@ public class GameManagerController : MonoBehaviour
         {
             boxCollider.enabled = true;
             misionCumplida.SetActive(true);
+            iconPortapapeles.SetActive(false);
         }
     }
 
