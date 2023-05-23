@@ -7,13 +7,15 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] audios;
     private AudioSource controlAudio;
 
+    public AudioSource ControlAudio { get => controlAudio; set => controlAudio = value; }
+
     private void Awake()
     {
-        controlAudio = GetComponent<AudioSource>();
+        ControlAudio = GetComponent<AudioSource>();
     }
 
     public void SeleccionAudios(int indice, float Volumen)
     {
-        controlAudio.PlayOneShot(audios[indice], Volumen);
+        ControlAudio.PlayOneShot(audios[indice], Volumen);
     }
 }

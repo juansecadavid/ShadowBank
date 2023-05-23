@@ -47,6 +47,8 @@ public class MainCharacter : MonoBehaviour
     public TextMeshProUGUI textoPerdida;
     SoundManager soundManager;
     bool isPlaying;
+    bool isPlayingFearSound;
+    public GameObject audioSource2;
 
     void Start()
     {
@@ -60,10 +62,13 @@ public class MainCharacter : MonoBehaviour
         canUseLintern=true;
         soundManager=FindAnyObjectByType<SoundManager>();
         isPlaying = false;
+        audioSource=GetComponent<AudioSource>();
         if(isNight)
         {
             barraEnergia.SetActive(false);
             lintern.SetActive(false);
+            isPlayingFearSound=false;
+            audioSource2.SetActive(false);
         }
     }
     private void Update()
@@ -90,17 +95,20 @@ public class MainCharacter : MonoBehaviour
         }
         else
         {
-            if(Input.GetKey(KeyCode.Tab))
+            if(Input.GetKeyDown(KeyCode.Tab))
             {
-                libroNotas.SetActive(true);
-                iconLibro.SetActive(false);
-                canMove = false;
-            }
-            else
-            {
-                libroNotas.SetActive(false);
-                iconLibro.SetActive(true);
-                canMove = true;
+                if(libroNotas.activeInHierarchy)
+                {
+                    libroNotas.SetActive(false);
+                    iconLibro.SetActive(true);
+                    canMove = true;
+                }
+                else
+                {
+                    libroNotas.SetActive(true);
+                    iconLibro.SetActive(false);
+                    canMove = false;
+                }             
             }
         }
         
@@ -248,7 +256,24 @@ public class MainCharacter : MonoBehaviour
             }
                 //soundManager.SeleccionAudios(1, 0.1f);
             fearHeart.SetActive(isVisible);
+            //soundManager.ControlAudio.Stop();
+            //soundManager.SeleccionAudios(1,0.5f);
+            if(!isPlayingFearSound&&isNight)
+            {
+                audioSource.Stop();
+                audioSource.Play();
+            }         
             fearTime = 0.0f;
+        }
+        if(!isPlayingFearSound&&fearBar>=180)
+        {
+            audioSource2.SetActive(true);
+            isPlayingFearSound = true;
+        }
+        if(isPlayingFearSound&&fearBar<180)
+        {
+            audioSource2.SetActive(false);
+            isPlayingFearSound=false;
         }
     }
     void Die()

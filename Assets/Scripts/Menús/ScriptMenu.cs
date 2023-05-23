@@ -18,6 +18,13 @@ public class ScriptMenu : MonoBehaviour
         mordida = GetComponent<AudioSource>();
 
     }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SwitchPause();
+        }
+    }
 
     public void SwitchPause()
     {
