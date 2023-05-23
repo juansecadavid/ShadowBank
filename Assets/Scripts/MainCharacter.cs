@@ -79,7 +79,6 @@ public class MainCharacter : MonoBehaviour
         HearthBit();
         fearText.text = $"{fearBar}";
         animationTime = 60f/fearBar-0.3f;
-        textoPildoras.text = $"{pildoras}";
         moneyText.text = $"{contadorDinero}";
         if(isNight==false)
         {
@@ -98,7 +97,8 @@ public class MainCharacter : MonoBehaviour
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Tab))
+            textoPildoras.text = $"{pildoras}";
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 if(libroNotas.activeInHierarchy)
                 {
