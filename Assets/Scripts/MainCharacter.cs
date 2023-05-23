@@ -49,6 +49,8 @@ public class MainCharacter : MonoBehaviour
     bool isPlaying;
     bool isPlayingFearSound;
     public GameObject audioSource2;
+    public TextMeshProUGUI textoPildoras;
+    int pildoras = 5;
 
     void Start()
     {
@@ -69,6 +71,7 @@ public class MainCharacter : MonoBehaviour
             lintern.SetActive(false);
             isPlayingFearSound=false;
             audioSource2.SetActive(false);
+            textoPildoras.text = $"{pildoras}";
         }
     }
     private void Update()
@@ -76,7 +79,7 @@ public class MainCharacter : MonoBehaviour
         HearthBit();
         fearText.text = $"{fearBar}";
         animationTime = 60f/fearBar-0.3f;
-        
+        textoPildoras.text = $"{pildoras}";
         moneyText.text = $"{contadorDinero}";
         if(isNight==false)
         {
@@ -109,6 +112,14 @@ public class MainCharacter : MonoBehaviour
                     iconLibro.SetActive(false);
                     canMove = false;
                 }             
+            }
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                if(pildoras>0)
+                {
+                    pildoras--;
+                    fearBar -= 30;
+                }
             }
         }
         
