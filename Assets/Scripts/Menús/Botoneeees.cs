@@ -15,6 +15,11 @@ public class Botoneeees : MonoBehaviour
         SceneManager.LoadScene("Inicio");
     }
 
+    public void Creditos()
+    {
+        SceneManager.LoadScene("Creditos");
+    }
+
     public void ContinuarNoche()
     {
         SceneManager.LoadScene("Noche");

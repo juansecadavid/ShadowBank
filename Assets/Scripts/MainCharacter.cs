@@ -98,7 +98,7 @@ public class MainCharacter : MonoBehaviour
         else
         {
             textoPildoras.text = $"{pildoras}";
-            if (Input.GetKeyDown(KeyCode.Tab))
+            /*if (Input.GetKeyDown(KeyCode.Tab))
             {
                 if(libroNotas.activeInHierarchy)
                 {
@@ -112,7 +112,7 @@ public class MainCharacter : MonoBehaviour
                     iconLibro.SetActive(false);
                     canMove = false;
                 }             
-            }
+            }*/
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 if(pildoras>0)

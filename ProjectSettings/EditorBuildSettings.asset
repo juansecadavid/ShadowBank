@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Noche.unity
     guid: eb8023d91202148de8a2a37427533260
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 73a46a540de6146a9b481bdc5ffdfef6
   m_configObjects: {}
