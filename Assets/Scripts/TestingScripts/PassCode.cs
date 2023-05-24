@@ -130,7 +130,7 @@ public class PassCode : MonoBehaviour
 
     public void EnterCode()
     {
-        if(uiText.text == code)
+        if(uiText.text == "1430")
         {
             door.Abrir();
             gameObject.SetActive(false);

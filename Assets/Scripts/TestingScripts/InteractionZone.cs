@@ -14,6 +14,11 @@ public class InteractionZone : MonoBehaviour
     public KeyCode interact;
     public UnityEvent interactAction;
 
+    private void Awake()
+    {
+        passCode = uCode.GetComponent<PassCode>();
+    }
+
     private void Update()
     {
         if (isInRange)

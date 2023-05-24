@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Puertas : MonoBehaviour
 {
+    SpriteRenderer renderer;
+    public GameObject _object;
+
     public bool isOpen;
     // Start is called before the first frame update
     void Start()
@@ -16,11 +19,10 @@ public class Puertas : MonoBehaviour
     {
         if (isOpen)
         {
+            isOpen = true;
+            renderer.sprite = null;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else
-        {
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            _object.SetActive(false);
         }
     }
     public void Abrir()
